@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : perl-fatpacker
 Version  : 0.010008
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/M/MS/MSTROUT/App-FatPacker-0.010008.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MS/MSTROUT/App-FatPacker-0.010008.tar.gz
 Summary  : 'pack your dependencies onto your script file'
@@ -69,6 +69,7 @@ cd %{_builddir}/App-FatPacker-0.010008
 unset http_proxy
 unset https_proxy
 unset no_proxy
+export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
@@ -83,6 +84,7 @@ export LANG=C.UTF-8
 unset http_proxy
 unset https_proxy
 unset no_proxy
+export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make TEST_VERBOSE=1 test
 
 %install
